@@ -1,21 +1,12 @@
-import React from 'react';
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
+const LoginButton = () => {
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
 
-
-class LoginButton extends React.Component {
-  render() {
-    return(
-      <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>Log In</Card.Title>
-          <Card.Text>
-            Click Below to Log In
-          </Card.Text>
-          {/* TODO: add a `LoginButton` component here that will log the user in with Auth0 */}
-        </Card.Body>
-      </Card>
-    )
-  }
-}
+    return !isAuthenticated && (
+        <button onClick={() => loginWithRedirect()}>Log In</button>
+    );
+};
 
 export default LoginButton;
