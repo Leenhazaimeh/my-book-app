@@ -11,6 +11,9 @@ export class Profile extends Component {
             userPicture: this.props.auth0.user.picture
         }
     }
+  
+
+       chick=()=>{console.log('hi')}
     render() {
 		console.log(this.state.userName);
         return (
@@ -21,6 +24,7 @@ export class Profile extends Component {
                 <h2>{this.state.userName}</h2>
                 <p>{this.state.userEmail}</p>
                 <img src={this.state.userPicture} alt={this.state.userName} />
+               
             </div>
         )
     }
