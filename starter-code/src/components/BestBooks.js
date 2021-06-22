@@ -17,7 +17,7 @@ class BestBooks extends React.Component {
 	componentDidMount = () => {
 		axios.get(`${this.state.serverUrl}/books?email=${this.state.userEmail}`).then(response => {
 			this.setState({
-				booksData: response.data[0].books
+				booksData: response.data.books
 			})
 		}).catch(
 			error => {
@@ -52,9 +52,6 @@ class BestBooks extends React.Component {
 												<p>{book.status}</p>
 											</Carousel.Caption>
 
-											{/* <h1>{book.name}</h1>
-								<p>{book.description}</p>
-								<p>{book.status}</p> */}
 
 										</div>
 									</Carousel.Item>
