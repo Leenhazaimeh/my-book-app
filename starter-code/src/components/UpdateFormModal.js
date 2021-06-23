@@ -8,10 +8,13 @@ export class UpdateFormModal extends Component {
 	render() {
 		return (
 			<div>
+				
 				<Form onSubmit={(e) => this.props.updateMyBook(e)}>
 					<Row className="align-items-center">
 						<Col>
 							<Form.Control type="text" placeholder="Update the book" value={this.props.bookUpdateName} onChange={(e) => this.props.updateBookNameFromTheModal(e.target.value)} />
+							<Form.Control type="text" placeholder="Update the book" value={this.props.bookUpdateDescription} onChange={(e) => this.props.updateBookDescFromTheModal(e.target.value)} />
+							<Form.Control type="text" placeholder="Update the book" value={this.props.bookUpdateStatus} onChange={(e) => this.props.updateBookStatusFromTheModal(e.target.value)} />
 						</Col>
 						<Col xs="auto" className="my-1">
 							<Button type="submit">Update Book</Button>
